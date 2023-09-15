@@ -30,7 +30,7 @@ namespace WindowsFormsApp3
             {
                 if (jmeno[0] < 'A' || jmeno[0] > 'Z')
                 {
-                    jmeno = (char)(jmeno[0] + 32) + jmeno.Substring(1);
+                    jmeno = jmeno.Replace(jmeno[0], (char)(jmeno[0] - 32));
                 }
                 string[] jmenoaprijmeni = jmeno.Split(' ');
                 jmenoaprijmeni[1] = jmenoaprijmeni[1].ToUpper();
@@ -48,7 +48,7 @@ namespace WindowsFormsApp3
             {
                 if (titul[0] < 'A' || titul[0] > 'Z')
                 {
-                    titul = (char)(titul[0] + 32) + titul.Substring(1) + '.';
+                    titul = titul.Replace(titul[0], (char)(titul[0] - 32)) + '.';
                 }
                 return titul;
             }
@@ -90,7 +90,7 @@ namespace WindowsFormsApp3
         }
         public override string ToString()
         {
-            return "Titul: " + titul + "\nJméno: " + jmeno + "\nMěsíční plat: " + mesicniplat + "\nPočet měsíců v práci: " + Pocetmesicu() + "\nOsobní ohodnoceni: " + ohodnoceni + "\nRoční plat: " + Rocniplat() + "\nCelkový plat: " + Celkem() + "\nPočet odpracovaných hodin: " + odpracovanehodiny + "\nPozice: " + pozice;
+            return "Titul: " + Titul + "\nJméno: " + Jmeno + "\nMěsíční plat: " + mesicniplat + "\nPočet měsíců v práci: " + Pocetmesicu() + "\nOsobní ohodnoceni: " + ohodnoceni + "\nRoční plat: " + Rocniplat() + "\nCelkový plat: " + Celkem() + "\nPočet odpracovaných hodin: " + odpracovanehodiny + "\nPozice: " + pozice;
         }
     }
 }

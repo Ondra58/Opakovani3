@@ -19,17 +19,24 @@ namespace WindowsFormsApp3
         Zamestnanec zamestnanec;
         private void button1_Click(object sender, EventArgs e)
         {
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = true;
-            string titul = "Ing.";
-            string jmeno = "Ondřej Zelený";
-            int mesicniplat = 50000;
-            DateTime datumnastupu = dateTimePicker1.Value;
-            int ohodnoceni = 1000;
-            int odpracovanehodiny = 10;
-            zamestnanec = new Zamestnanec(titul, jmeno, mesicniplat, datumnastupu, ohodnoceni, odpracovanehodiny);
-            MessageBox.Show(zamestnanec.ToString(), "Info");
+            try
+            {
+                string titul = textBox1.Text;
+                string jmeno = textBox2.Text;
+                int mesicniplat = 50000;
+                DateTime datumnastupu = dateTimePicker1.Value;
+                int ohodnoceni = 1000;
+                int odpracovanehodiny = 10;
+                zamestnanec = new Zamestnanec(titul, jmeno, mesicniplat, datumnastupu, ohodnoceni, odpracovanehodiny);
+                MessageBox.Show(zamestnanec.ToString(), "Info");
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+            }
+            catch
+            {
+                MessageBox.Show("Chyba");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
